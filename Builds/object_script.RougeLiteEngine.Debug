@@ -1,0 +1,16 @@
+INPUT(
+./debug\main.o
+./debug\game.o
+./debug\gamescene.o
+./debug\composition.o
+./debug\gameobject.o
+./debug\playersprite.o
+./debug\stateidle.o
+./debug\vidlestate.o
+./debug\iinput.o
+./debug\moc_game.o
+./debug\moc_gamescene.o
+./debug\moc_composition.o
+./debug\moc_gameobject.o
+./debug\moc_playersprite.o
+);

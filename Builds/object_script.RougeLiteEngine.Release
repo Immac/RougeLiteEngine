@@ -1,0 +1,16 @@
+INPUT(
+./release\main.o
+./release\game.o
+./release\gamescene.o
+./release\composition.o
+./release\gameobject.o
+./release\playersprite.o
+./release\stateidle.o
+./release\vidlestate.o
+./release\iinput.o
+./release\moc_game.o
+./release\moc_gamescene.o
+./release\moc_composition.o
+./release\moc_gameobject.o
+./release\moc_playersprite.o
+);
