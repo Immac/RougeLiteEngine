@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
         sf::Sprite BufferRenderSprite;
 
         GameObject object1 = *test.makeSuwakoHat();
+        GameObject object2 = *test.makeHead();
         GameObject object0 = test.testPlayer();
 
        while (window.isOpen())
@@ -32,13 +33,17 @@ int main(int argc, char *argv[])
            }
            object0.handleInput();
            object1.handleInput();
+           object2.handleInput();
            object0.update();
            object1.update();
+           object2.update();
 
           //
            BufferRender.clear();
            BufferRender.draw(object0);
            BufferRender.draw(object1);
+           BufferRender.draw(object2);
+
            BufferRender.display();
            //
 

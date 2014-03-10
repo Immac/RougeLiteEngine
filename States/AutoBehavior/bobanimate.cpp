@@ -8,21 +8,14 @@ BobAnimate::BobAnimate()
 
 void BobAnimate::handleInput(GameObject &object, IInput *input, int stateIndex)
 {
-   /* if(!input->isDown() || !input->isLeft() || !input->isRight() || !input->isUp() || currentCycle == -11)
+    if(!input->isDown() || !input->isLeft() || !input->isRight() || !input->isUp())
     {
-        object.setVMoveState(&AnimationStates::bobbingIdle);
-    }*/
+       object.setState(&AnimationStates::bobbingIdle,stateIndex);
+    }
 }
 
 void BobAnimate::update(GameObject &object)
 {
-    object.move(currentCycle,0);
-    if(!reset)
-        currentCycle++;
-    else
-        currentCycle--;
-    if(currentCycle > 10)
-        reset = true;
-    if(currentCycle < -10)
-        reset = true;
+    object.setOrigin(12,12);
+    object.rotate(15);
 }

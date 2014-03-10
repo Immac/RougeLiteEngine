@@ -16,6 +16,7 @@ CompositeCharacter::~CompositeCharacter()
 sf::Drawable *CompositeCharacter::getSprite(GameObject &object)
 {
     foreach (GameObject *part, parts) {
+        part->handleInput();
         part->update();
     }
     return sprite;
@@ -24,11 +25,11 @@ sf::Drawable *CompositeCharacter::getSprite(GameObject &object)
 void CompositeCharacter::pushBackPart(GameObject *part)
 {
     parts.push_back(part);
-    Composition.push_back(part);
+    sprite->push_back(part);
 }
 
 void CompositeCharacter::pushFrontPart(GameObject *part)
 {
     parts.push_front(part);
-    Composition.push_fron(part);
+    sprite->push_front(part);
 }
