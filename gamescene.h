@@ -5,15 +5,10 @@
 
 class GameScene
 {
-    Q_OBJECT
 public:
     explicit GameScene();
 
 private:
-
-signals:
-
-public slots:
 
 };
 

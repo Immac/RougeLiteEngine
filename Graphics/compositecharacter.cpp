@@ -13,7 +13,7 @@ CompositeCharacter::~CompositeCharacter()
     }
 }
 
-sf::Drawable *CompositeCharacter::updateSprite(GameObject &object)
+void CompositeCharacter::updateSprite(GameObject &object)
 {
     foreach (GameObject *part, parts) {
         part->handleInput();

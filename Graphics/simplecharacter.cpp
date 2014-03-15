@@ -5,9 +5,9 @@ SimpleCharacter::SimpleCharacter()
 
 }
 
-sf::Drawable *SimpleCharacter::getSprite(GameObject &object)
+void SimpleCharacter::updateSprite(GameObject &object)
 {
-    return graphic;
+    object.setMySprite(graphic);
 }
 
 

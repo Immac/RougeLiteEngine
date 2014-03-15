@@ -10,12 +10,14 @@ public:
 
     // IGraphic interface
 public:
-    sf::Drawable *getSprite(GameObject &object);
+    void updateSprite(GameObject &object);
 
     void setGraphic(sf::Drawable *value);
 
 private:
     sf::Drawable *graphic;
+
+
 
 
 };
