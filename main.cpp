@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
            object0.handleInput();
            object1.handleInput();
            object2.handleInput();
+
            object0.update();
            object1.update();
            object2.update();

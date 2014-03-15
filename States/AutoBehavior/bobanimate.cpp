@@ -2,8 +2,6 @@
 
 BobAnimate::BobAnimate()
 {
-    currentCycle = 0;
-    bool reset = false;
 }
 
 void BobAnimate::handleInput(GameObject &object, IInput *input, int stateIndex)

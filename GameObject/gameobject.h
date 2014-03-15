@@ -1,10 +1,10 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 #include <SFML/Graphics.hpp>
-#include "igraphic.h"
+#include "Graphics/igraphic.h"
 #include "States/state.h"
 #include "Inputs/iinput.h"
-#include <vector>
+#include <QVector>
 
 class IInput;
 class IGraphic;
@@ -34,7 +34,7 @@ public:
     IGraphic *graphics;
 private:
     IInput *input;
-    std::vector<IState *> states;
+    QVector<IState *> states;
     sf::Drawable *mySprite;
 
     // Drawable interface

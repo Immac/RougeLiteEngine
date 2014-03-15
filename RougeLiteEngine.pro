@@ -52,7 +52,6 @@ HEADERS += \
     gamescene.h \
     composition.h \
     gameobject.h \
-    igraphic.h \
     States/state.h \
     Inputs/iinput.h \
     GameObject/gameobject.h \
@@ -71,4 +70,5 @@ HEADERS += \
     States/AutoBehavior/animationstates.h \
     States/AutoBehavior/bobanimate.h \
     Graphics/compositecharacter.h \
-    Graphics/simplecharacter.h
+    Graphics/simplecharacter.h \
+    Graphics/igraphic.h

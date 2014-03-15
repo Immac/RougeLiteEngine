@@ -9,9 +9,10 @@ class IGraphic
 {
 
 public:
-    virtual sf::Drawable *getSprite(GameObject &object) = 0;
+    virtual void updateSprite(GameObject &object) = 0;
     virtual ~IGraphic() {}
 protected:
+
 
 };
 

@@ -12,7 +12,6 @@ public:
     ~CompositeCharacter();
     // IGraphic interface
 public:
-    sf::Drawable *getSprite(GameObject &object);
 
     void pushBackPart(GameObject *part);
     void pushFrontPart(GameObject *part);
@@ -23,6 +22,10 @@ private:
 
     // IGraphic interface
 
+
+    // IGraphic interface
+public:
+    void updateSprite(GameObject &object);
 };
 
 #endif // ANIMATEDCHARACTER_H

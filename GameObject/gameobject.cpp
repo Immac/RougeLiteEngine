@@ -31,7 +31,7 @@ void GameObject::update()
     for (int i = 0; i < states.size(); i++) {
        states[i]->update(*this);
     }
-    mySprite = graphics->getSprite(*this);
+    graphics->updateSprite(*this);
 }
 
 void GameObject::addState(IState *state)

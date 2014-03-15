@@ -13,13 +13,13 @@ CompositeCharacter::~CompositeCharacter()
     }
 }
 
-sf::Drawable *CompositeCharacter::getSprite(GameObject &object)
+sf::Drawable *CompositeCharacter::updateSprite(GameObject &object)
 {
     foreach (GameObject *part, parts) {
         part->handleInput();
         part->update();
     }
-    return sprite;
+    object.setMySprite(sprite);
 }
 
 void CompositeCharacter::pushBackPart(GameObject *part)

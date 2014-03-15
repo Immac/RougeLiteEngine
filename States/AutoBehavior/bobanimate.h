@@ -12,8 +12,6 @@ public:
     void handleInput(GameObject &object, IInput *input, int stateIndex);
     void update(GameObject &object);
 private:
-    int currentCycle;
-    bool reset;
 };
 
 #endif // BOBANIMATE_H
