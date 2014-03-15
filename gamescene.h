@@ -1,15 +1,13 @@
 #ifndef GAMESCENE_H
 #define GAMESCENE_H
-
-#include <QObject>
 #include <QVector>
 #include <SFML/Graphics.hpp>
 
-class GameScene : public QObject
+class GameScene
 {
     Q_OBJECT
 public:
-    explicit GameScene(QObject *parent = 0);
+    explicit GameScene();
 
 private:
 

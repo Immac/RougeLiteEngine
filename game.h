@@ -2,7 +2,7 @@
 #define GAME_H
 #include <QVector>
 #include "gamescene.h"
-class Game : public QObject
+class Game
 {
 public:
     explicit Game();
