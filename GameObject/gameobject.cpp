@@ -14,7 +14,8 @@ GameObject::~GameObject()
 
 void GameObject::handleInput()
 {
-    for (int i = 0; i < states.size(); i++) {
+    for (int i = 0; i < states.size(); i++)
+    {
        states[i]->handleInput(*this,input,i);
     }
 }
@@ -22,7 +23,6 @@ void GameObject::handleInput()
 void GameObject::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
     states.transform *= getTransform();
-
     target.draw(*mySprite,states);
 }
 

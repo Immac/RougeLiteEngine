@@ -33,6 +33,7 @@ private:
     IInput *input;
     QVector<IState *> states;
     sf::Drawable *mySprite;
+    sf::Transformable *myTransformation;
 
     // Drawable interface
 protected:
