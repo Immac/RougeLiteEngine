@@ -9,7 +9,8 @@ class IGraphic
 {
 
 public:
-    virtual void updateSprite(GameObject &object) = 0;
+    virtual void update(GameObject &object) = 0;
+    virtual void render(GameObject &object) = 0;
     virtual ~IGraphic() {}
 protected:
 

@@ -53,7 +53,6 @@ HEADERS += \
     gamescene.h \
     composition.h \
     gameobject.h \
-    States/state.h \
     Inputs/iinput.h \
     GameObject/gameobject.h \
     Isnputs/keyboardinput.h \
@@ -73,4 +72,4 @@ HEADERS += \
     Graphics/compositecharacter.h \
     Graphics/simplecharacter.h \
     Graphics/igraphic.h \
-    Graphics/ianimation.h
+    States/istate.h

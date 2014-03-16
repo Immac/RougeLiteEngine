@@ -2,41 +2,34 @@
 #define GAMEOBJECT_H
 #include <SFML/Graphics.hpp>
 #include "Graphics/igraphic.h"
-#include "States/state.h"
+#include "States/istate.h"
 #include "Inputs/iinput.h"
-#include <QVector>
+#include <QList>
 
 class IInput;
 class IGraphic;
 class IState;
 
-class GameObject : public sf::Drawable, public sf::Transformable
+class GameObject
 {
 
 public:
-    explicit GameObject(IInput *input, IGraphic *graphix);
+    explicit GameObject(IInput *input, IGraphic *graphics);
     ~GameObject();
-    int baseSpeed = 0;
 
-    void handleInput();
-    void update();
+    virtual void handleInput();
+    virtual void update();
+    virtual void render();
 
-    void addState(IState *state);
-    void setState(IState *state,int index);
+    virtual void addState(IState *state);
+    virtual void setState(IState *state,int index);
 
-    //Accessors    
-    sf::Drawable *getMySprite() const;
-    void setMySprite(sf::Drawable *value);
 
-    IGraphic *graphics;
-private:
-    IInput *input;
-    QVector<IState *> states;
-    sf::Drawable *mySprite;
-
-    // Drawable interface
 protected:
-    void draw(sf::RenderTarget &target, sf::RenderStates states) const;
+    IGraphic *graphics;
+    IInput *input;
+    QList<IState *> states;
+    //TODO: Object Interaction
 };
 
 #endif // GAMEOBJECT_H

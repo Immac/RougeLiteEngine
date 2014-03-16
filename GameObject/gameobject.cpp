@@ -1,9 +1,9 @@
 #include "gameobject.h"
 
-GameObject::GameObject(IInput *input, IGraphic *graphix)
+GameObject::GameObject(IInput *input, IGraphic *graphics)
 {
     this->input = input;
-    this->graphics = graphix;
+    this->graphics = graphics;
 }
 
 GameObject::~GameObject()
@@ -20,10 +20,9 @@ void GameObject::handleInput()
     }
 }
 
-void GameObject::draw(sf::RenderTarget &target, sf::RenderStates states) const
+void GameObject::render()
 {
-    states.transform *= getTransform();
-    target.draw(*mySprite,states);
+    graphics->render(*this);
 }
 
 void GameObject::update()
@@ -31,7 +30,12 @@ void GameObject::update()
     for (int i = 0; i < states.size(); i++) {
        states[i]->update(*this);
     }
-    graphics->updateSprite(*this);
+    graphics->update(*this);
+}
+
+void GameObject::render()
+{
+    graphics->render(*this);
 }
 
 void GameObject::addState(IState *state)
@@ -42,16 +46,6 @@ void GameObject::addState(IState *state)
 void GameObject::setState(IState *state, int i)
 {
     states[i] = state;
-}
-
-sf::Drawable *GameObject::getMySprite() const
-{
-    return mySprite;
-}
-
-void GameObject::setMySprite(sf::Drawable *value)
-{
-    mySprite = value;
 }
 
 
