@@ -23,7 +23,6 @@ private:
     sf::RenderTarget *renderTarget;
     sf::Drawable *sprite;
     sf::Transform transformation;
-
 };
 
 #endif // SIMPLECHARACTER_H

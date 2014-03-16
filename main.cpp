@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
        BufferRender.create(800,600);
         sf::Texture BufferRenderTexture;
         sf::Sprite BufferRenderSprite;
-        //============
-        window.setFramerateLimit(10);
-        //============
+        //============ test frame limit
+        window.setFramerateLimit(60);
+        //============  animation test object
         sf::Texture animationSpriteSheet;
         if(!animationSpriteSheet.loadFromFile("Assets/Images/chara1.png"))
         {
@@ -28,6 +28,18 @@ int main(int argc, char *argv[])
         }
         Animation *animationObject = new Animation(3,4,32,32,animationSpriteSheet);
         animationObject->update();
+        //============ test Simple IGraphics
+        SimpleCharacter *simpleGraphics = new SimpleCharacter(BufferRender);
+        simpleGraphics->setSprite(animationObject);
+        //============ test keyboard input object
+        KeyboardInput keyInput;
+        //============ test movement stats
+        HMoveState horizontalMove;
+        VMoveState verticalMove;
+        //============ test gameobject
+        GameObject *gameObject1 = new GameObject(&keyInput,simpleGraphics);
+        gameObject1->addState(&horizontalMove);
+        gameObject1->addState(&verticalMove);
         //============
 
        while (window.isOpen())
@@ -41,14 +53,21 @@ int main(int argc, char *argv[])
                    window.close();
            }
 
-          //
+           // handle inputs
+           gameObject1->handleInput();
+           animationObject->stepAlternate(); //shoulde be called around here, after the states have done changes
+           // update objects
+           gameObject1->update();
+           animationObject->update(); // TEST PURPOSES should be called on update
+
+           // update animations
+           gameObject1->animate();
+
+
+           //draw the objects
            BufferRender.clear();
-           BufferRender.draw(*animationObject);
+           gameObject1->render();
            BufferRender.display();
-           //
-            animationObject->stepAlternate();
-            animationObject->update();
-            //
 
            BufferRenderTexture = BufferRender.getTexture();
            BufferRenderSprite.setTexture(BufferRenderTexture,true);

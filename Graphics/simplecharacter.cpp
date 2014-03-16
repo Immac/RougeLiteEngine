@@ -8,12 +8,14 @@ SimpleCharacter::SimpleCharacter(sf::RenderTarget &renderTarget)
 
 void SimpleCharacter::update(GameObject &object)
 {
-
 }
 
 void SimpleCharacter::render(GameObject &object)
 {
-    renderTarget->draw(*sprite,transformation);
+    sf::Transform transient;
+    transient *= transformation;
+    transient*= object.getTransform();
+    renderTarget->draw(*sprite,transient);
 }
 sf::Drawable *SimpleCharacter::getSprite() const
 {
