@@ -1,6 +1,6 @@
 #ifndef BOBANIMATE_H
 #define BOBANIMATE_H
-#include "States/state.h"
+#include "States/istate.h"
 #include "animationstates.h"
 class BobAnimate: public IState
 {

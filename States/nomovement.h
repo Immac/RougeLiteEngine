@@ -1,6 +1,6 @@
 #ifndef NOMOVEMENT_H
 #define NOMOVEMENT_H
-#include "States/state.h"
+#include "States/istate.h"
 #include "staticstates.h"
 
 class NoMovement:public IState

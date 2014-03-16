@@ -1,6 +1,6 @@
 #ifndef BOBIDLE_H
 #define BOBIDLE_H
-#include "States/state.h"
+#include "States/istate.h"
 #include "States/AutoBehavior/animationstates.h"
 
 class BobIdle: public IState

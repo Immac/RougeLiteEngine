@@ -1,6 +1,6 @@
 #ifndef HMOVELEFT_H
 #define HMOVELEFT_H
-#include "States/state.h"
+#include "States/istate.h"
 #include "States/staticstates.h"
 
 class HMoveLeft: public IState

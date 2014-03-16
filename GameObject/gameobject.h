@@ -10,7 +10,7 @@ class IInput;
 class IGraphic;
 class IState;
 
-class GameObject
+class GameObject:public sf::Transformable
 {
 
 public:
@@ -19,6 +19,7 @@ public:
 
     virtual void handleInput();
     virtual void update();
+    virtual void animate();
     virtual void render();
 
     virtual void addState(IState *state);

@@ -1,18 +1,37 @@
 #include "simplecharacter.h"
 
-SimpleCharacter::SimpleCharacter()
+
+SimpleCharacter::SimpleCharacter(sf::RenderTarget &renderTarget)
+{
+    this->renderTarget = &renderTarget;
+}
+
+void SimpleCharacter::update(GameObject &object)
 {
 
 }
 
-void SimpleCharacter::updateSprite(GameObject &object)
+void SimpleCharacter::render(GameObject &object)
 {
-    object.setMySprite(graphic);
+    renderTarget->draw(*sprite,transformation);
+}
+sf::Drawable *SimpleCharacter::getSprite() const
+{
+    return sprite;
 }
 
-
-void SimpleCharacter::setGraphic(sf::Drawable *value)
+void SimpleCharacter::setSprite(sf::Drawable *value)
 {
-    graphic = value;
+    sprite = value;
 }
+sf::Transform SimpleCharacter::getTransform() const
+{
+    return transformation;
+}
+
+void SimpleCharacter::setTransform(sf::Transform value)
+{
+    transformation = value;
+}
+
 

@@ -1,6 +1,6 @@
 #ifndef VMOVESTATE_H
 #define VMOVESTATE_H
-#include "States/state.h"
+#include "States/istate.h"
 #include "staticstates.h"
 
 class VMoveState:public IState

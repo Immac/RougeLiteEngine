@@ -1,7 +1,6 @@
 #ifndef ISPRITE_H
 #define ISPRITE_H
 
-#include <SFML/Graphics.hpp>
 #include "GameObject/gameobject.h"
 class GameObject;
 

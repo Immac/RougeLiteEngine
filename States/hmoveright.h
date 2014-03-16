@@ -1,6 +1,6 @@
 #ifndef HMOVERIGHT_H
 #define HMOVERIGHT_H
-#include "States/state.h"
+#include "States/istate.h"
 #include "States/staticstates.h"
 
 class HMoveRight: public IState

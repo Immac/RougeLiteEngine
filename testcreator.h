@@ -13,11 +13,12 @@
 class TestCreator
 {
 public:
+    /*
     TestCreator();
     GameObject testPlayer();
     GameObject *makeSuwakoHat();
     GameObject *makeHead();
-
+*/
 };
 
 #endif // TESTCREATOR_H

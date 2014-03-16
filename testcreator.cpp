@@ -1,6 +1,6 @@
 #include "testcreator.h"
 
-
+/*
 TestCreator::TestCreator()
 {
 }
@@ -19,11 +19,12 @@ GameObject TestCreator::testPlayer()
     object->addState(&MovementStates::horizontalIdle);
     object->addState(&MovementStates::verticalIdle);
     return *object;
+    return 0;
 }
 
 GameObject *TestCreator::makeSuwakoHat()
 {
-    KeyboardInput *input = new KeyboardInput();
+   KeyboardInput *input = new KeyboardInput();
     SimpleCharacter *graphics = new SimpleCharacter;
 
     GameObject *object =  new GameObject(input,graphics);
@@ -37,6 +38,7 @@ GameObject *TestCreator::makeSuwakoHat()
     object->addState(&AnimationStates::bobbingIdle);
 
     return object;
+    return 0;
 }
 
 GameObject *TestCreator::makeHead()
@@ -53,5 +55,6 @@ GameObject *TestCreator::makeHead()
     //object->setMySprite(mySprite);
     object->addState(&AnimationStates::bobbingIdle);
     return object;
-}
 
+}
+*/

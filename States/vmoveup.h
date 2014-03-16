@@ -1,7 +1,7 @@
 #ifndef VMOVEUP_H
 #define VMOVEUP_H
 #include "staticstates.h"
-#include "state.h"
+#include "istate.h"
 class VMoveUp: public IState
 {
 public:

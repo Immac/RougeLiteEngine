@@ -6,6 +6,7 @@
 #include "Inputs/keyboardinput.h"
 #include "States/vmovestate.h"
 #include "testcreator.h"
+#include "Graphics/animation.h"
 
 int main(int argc, char *argv[])
 {
@@ -16,10 +17,18 @@ int main(int argc, char *argv[])
        BufferRender.create(800,600);
         sf::Texture BufferRenderTexture;
         sf::Sprite BufferRenderSprite;
-
-        GameObject object1 = *test.makeSuwakoHat();
-        GameObject object2 = *test.makeHead();
-        GameObject object0 = test.testPlayer();
+        //============
+        window.setFramerateLimit(10);
+        //============
+        sf::Texture animationSpriteSheet;
+        if(!animationSpriteSheet.loadFromFile("Assets/Images/chara1.png"))
+        {
+            window.close();
+            exit(100);
+        }
+        Animation *animationObject = new Animation(3,4,32,32,animationSpriteSheet);
+        animationObject->update();
+        //============
 
        while (window.isOpen())
        {
@@ -31,24 +40,16 @@ int main(int argc, char *argv[])
                if(sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                    window.close();
            }
-           object0.handleInput();
-           object1.handleInput();
-           object2.handleInput();
-
-           object0.update();
-           object1.update();
-           object2.update();
 
           //
            BufferRender.clear();
-           BufferRender.draw(object0);
-           BufferRender.draw(object1);
-           BufferRender.draw(object2);
-
+           BufferRender.draw(*animationObject);
            BufferRender.display();
            //
-
+            animationObject->stepAlternate();
+            animationObject->update();
             //
+
            BufferRenderTexture = BufferRender.getTexture();
            BufferRenderSprite.setTexture(BufferRenderTexture,true);
            window.draw(BufferRenderSprite);

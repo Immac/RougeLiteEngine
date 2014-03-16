@@ -30,12 +30,11 @@ void GameObject::update()
     for (int i = 0; i < states.size(); i++) {
        states[i]->update(*this);
     }
-    graphics->update(*this);
 }
 
-void GameObject::render()
+void GameObject::animate()
 {
-    graphics->render(*this);
+    graphics->update(*this);
 }
 
 void GameObject::addState(IState *state)

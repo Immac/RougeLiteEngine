@@ -46,7 +46,7 @@ SOURCES += main.cpp \
     States/AutoBehavior/bobanimate.cpp \
     Graphics/simplecharacter.cpp \
     Graphics/compositecharacter.cpp \
-    Graphics/ianimation.cpp
+    Graphics/animation.cpp
 
 HEADERS += \
     game.h \
@@ -72,4 +72,5 @@ HEADERS += \
     Graphics/compositecharacter.h \
     Graphics/simplecharacter.h \
     Graphics/igraphic.h \
-    States/istate.h
+    States/istate.h \
+    Graphics/animation.h

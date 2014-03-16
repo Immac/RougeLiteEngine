@@ -1,35 +1,31 @@
 #include "compositecharacter.h"
 
-CompositeCharacter::CompositeCharacter()
+CompositeCharacter::CompositeCharacter(sf::RenderWindow renderTarget)
 {
-    sprite = new Composition;
+
 }
 
-CompositeCharacter::~CompositeCharacter()
+CompositeCharacter::CompositeCharacter(sf::RenderTexture renderTarget)
 {
-    delete sprite;
-    foreach (GameObject *obj, parts) {
-        delete obj;
-    }
+
 }
 
-void CompositeCharacter::updateSprite(GameObject &object)
+void CompositeCharacter::update(GameObject &object)
 {
-    foreach (GameObject *part, parts) {
-        part->handleInput();
-        part->update();
-    }
-    object.setMySprite(sprite);
+
+}
+
+void CompositeCharacter::render(GameObject &object)
+{
+
 }
 
 void CompositeCharacter::pushBackPart(GameObject *part)
 {
-    parts.push_back(part);
-    sprite->push_back(part);
+
 }
 
 void CompositeCharacter::pushFrontPart(GameObject *part)
 {
-    parts.push_front(part);
-    sprite->push_front(part);
+
 }

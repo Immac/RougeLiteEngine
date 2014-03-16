@@ -1,24 +1,28 @@
 #ifndef SIMPLECHARACTER_H
 #define SIMPLECHARACTER_H
 #include "igraphic.h"
+#include <SFML/Graphics.hpp>
 
 class SimpleCharacter : public IGraphic
 {
 public:
-    SimpleCharacter();
-
-
+    SimpleCharacter(sf::RenderTarget &renderTarget);
     // IGraphic interface
 public:
-    void updateSprite(GameObject &object);
+    void update(GameObject &object);
+    void render(GameObject &object);
 
-    void setGraphic(sf::Drawable *value);
+    //Accessors
+    sf::Drawable *getSprite() const;
+    void setSprite(sf::Drawable *value);
+
+    sf::Transform getTransform() const;
+    void setTransform(sf::Transform value);
 
 private:
-    sf::Drawable *graphic;
-
-
-
+    sf::RenderTarget *renderTarget;
+    sf::Drawable *sprite;
+    sf::Transform transformation;
 
 };
 
