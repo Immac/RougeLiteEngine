@@ -32,21 +32,11 @@ SOURCES += main.cpp \
     composition.cpp \
     GameObject/gameobject.cpp \
     Inputs/keyboardinput.cpp \
-    States/vmovestate.cpp \
-    testcreator.cpp \
-    States/staticstates.cpp \
-    States/vmoveup.cpp \
-    States/vmovedown.cpp \
-    States/hmovestate.cpp \
-    States/hmoveright.cpp \
-    States/hmoveleft.cpp \
-    States/nomovement.cpp \
-    States/AutoBehavior/bobidle.cpp \
-    States/AutoBehavior/animationstates.cpp \
-    States/AutoBehavior/bobanimate.cpp \
     Graphics/simplecharacter.cpp \
     Graphics/compositecharacter.cpp \
-    Graphics/animation.cpp
+    Graphics/animation.cpp \
+    Graphics/animatedgraphics.cpp \
+    States/statemachine.cpp
 
 HEADERS += \
     game.h \
@@ -57,20 +47,10 @@ HEADERS += \
     GameObject/gameobject.h \
     Isnputs/keyboardinput.h \
     Inputs/keyboardinput.h \
-    States/vmovestate.h \
-    testcreator.h \
-    States/staticstates.h \
-    States/vmoveup.h \
-    States/vmovedown.h \
-    States/hmovestate.h \
-    States/hmoveright.h \
-    States/hmoveleft.h \
-    States/nomovement.h \
-    States/AutoBehavior/bobidle.h \
-    States/AutoBehavior/animationstates.h \
-    States/AutoBehavior/bobanimate.h \
     Graphics/compositecharacter.h \
     Graphics/simplecharacter.h \
     Graphics/igraphic.h \
     States/istate.h \
-    Graphics/animation.h
+    Graphics/animation.h \
+    Graphics/animatedgraphics.h \
+    States/statemachine.h

@@ -4,14 +4,12 @@
 #include "GameObject/gameobject.h"
 #include "Inputs/iinput.h"
 #include "Inputs/keyboardinput.h"
-#include "States/vmovestate.h"
-#include "testcreator.h"
 #include "Graphics/animation.h"
+#include "Graphics/simplecharacter.h"
 
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-    TestCreator test;
        sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
        sf::RenderTexture BufferRender;
        BufferRender.create(800,600);
@@ -34,12 +32,12 @@ int main(int argc, char *argv[])
         //============ test keyboard input object
         KeyboardInput keyInput;
         //============ test movement stats
-        HMoveState horizontalMove;
-        VMoveState verticalMove;
+        //HMoveState horizontalMove;
+       // VMoveState verticalMove;
         //============ test gameobject
         GameObject *gameObject1 = new GameObject(&keyInput,simpleGraphics);
-        gameObject1->addState(&horizontalMove);
-        gameObject1->addState(&verticalMove);
+        //gameObject1->addState(&horizontalMove);
+        //gameObject1->addState(&verticalMove);
         //============
 
        while (window.isOpen())
