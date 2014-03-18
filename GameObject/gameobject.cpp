@@ -18,6 +18,7 @@ void GameObject::handleInput()
     {
        states[i]->handleInput(*this,input);
     }
+
 }
 
 void GameObject::render()

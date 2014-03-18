@@ -20,6 +20,6 @@ int VMoveIdle::handleInput(GameObject &object, IInput *input)
 
 int VMoveIdle::update(GameObject &object)
 {
-    object.animate(); // !!WARNING!! //
+
     return 0;
 }

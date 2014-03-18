@@ -1,3 +1,4 @@
+#include <Graphics/animatedgraphics.h>
 #include <QCoreApplication>
 #include <States/Movement/hmoveidle.h>
 #include <States/Movement/hmoveleft.h>
@@ -35,8 +36,8 @@ int main(int argc, char *argv[])
         Animation *animationObject = new Animation(3,4,32,32,animationSpriteSheet);
         animationObject->update();
         //============ test Simple IGraphics
-        SimpleCharacter *simpleGraphics = new SimpleCharacter(BufferRender);
-        simpleGraphics->setSprite(animationObject);
+        AnimatedGraphics *simpleGraphics = new AnimatedGraphics(animationObject,BufferRender);
+
         //============ test keyboard input object
         KeyboardInput keyInput;
         //============ test movement stats
@@ -102,13 +103,13 @@ int main(int argc, char *argv[])
 
            // handle inputs
            gameObject1->handleInput();
-           animationObject->stepAlternate(); //shoulde be called around here, after the states have done changes
+           //animationObject->stepAlternate(); //shoulde be called around here, after the states have done changes
            // update objects
            gameObject1->update();
-           animationObject->update(); // TEST PURPOSES should be called on update
+           //animationObject->update(); // TEST PURPOSES should be called on update
 
            // update animations
-           gameObject1->animate();
+           //gameObject1->animate();
 
 
            //draw the objects

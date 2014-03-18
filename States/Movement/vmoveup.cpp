@@ -16,7 +16,7 @@ int VMoveUp::handleInput(GameObject &object, IInput *input)
 
 int VMoveUp::update(GameObject &object)
 {
-    object.animate(); // !!WARNING!! //
+    object.animate();
     object.move(0,-1);
     return 0;
 }
