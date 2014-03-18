@@ -16,13 +16,18 @@ void GameObject::handleInput()
 {
     for (int i = 0; i < states.size(); i++)
     {
-       states[i]->handleInput(*this,input,i);
+       states[i]->handleInput(*this,input);
     }
 }
 
 void GameObject::render()
 {
     graphics->render(*this);
+}
+
+void GameObject::addStateMachine(StateMachine *state)
+{
+    states.append(state);
 }
 
 void GameObject::update()
@@ -36,17 +41,6 @@ void GameObject::animate()
 {
     graphics->update(*this);
 }
-
-void GameObject::addState(IState *state)
-{
-    states.push_back(state);
-}
-
-void GameObject::setState(IState *state, int i)
-{
-    states[i] = state;
-}
-
 
 
 

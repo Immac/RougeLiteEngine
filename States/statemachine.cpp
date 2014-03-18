@@ -2,28 +2,25 @@
 
 StateMachine::StateMachine()
 {
+    activeState = EInput::Idle;
 }
 
-void StateMachine::addState(IState &newState)
+void StateMachine::addState(MachinableState &newState, EInput key)
 {
-    if(!machineStates.contains(&newState))
-    {
-        machineStates.push_back(&newState);
-    }
-
+    machineStates.insert(key,&newState);
 }
 
 void StateMachine::handleInput(GameObject &object, IInput *input)
 {
-    machineStates[activeState]->handleInput(object,input);
+    MachinableState *temporalState = machineStates.value(activeState);
+    int exit = temporalState->state->handleInput(object,input);
+    activeState = temporalState->Exits.value(exit);
 }
 
 void StateMachine::update(GameObject &object)
 {
-    machineStates[activeState]->update(object);
+    MachinableState *temporalState = machineStates.value(activeState);
+    int exit = temporalState->state->update(object);
+    activeState = temporalState->Exits.value(exit);
 }
 
-void StateMachine::linkStates(int fromStateIndex, int exitStateIndex, int exitNumber)
-{
-    machineStates[fromStateIndex]->linkExit(machineStates[exitStateIndex],exitNumber);
-}

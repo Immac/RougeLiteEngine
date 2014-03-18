@@ -4,8 +4,10 @@
 #include "Graphics/igraphic.h"
 #include "States/istate.h"
 #include "Inputs/iinput.h"
+#include "States/statemachine.h"
 #include <QList>
 
+class StateMachine;
 class IInput;
 class IGraphic;
 class IState;
@@ -22,14 +24,13 @@ public:
     virtual void animate();
     virtual void render();
 
-    virtual void addState(IState *state);
-    virtual void setState(IState *state,int index);
+    virtual void addStateMachine(StateMachine *state);
 
 
 protected:
     IGraphic *graphics;
     IInput *input;
-    QList<IState *> states;
+    QList<StateMachine *> states;
     //TODO: Object Interaction
 };
 

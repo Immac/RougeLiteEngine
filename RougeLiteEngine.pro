@@ -36,7 +36,13 @@ SOURCES += main.cpp \
     Graphics/compositecharacter.cpp \
     Graphics/animation.cpp \
     Graphics/animatedgraphics.cpp \
-    States/statemachine.cpp
+    States/statemachine.cpp \
+    States/Movement/vmoveidle.cpp \
+    States/Movement/vmoveup.cpp \
+    States/Movement/vmoverdown.cpp \
+    States/Movement/hmoveidle.cpp \
+    States/Movement/hmoveleft.cpp \
+    States/Movement/hmoveright.cpp
 
 HEADERS += \
     game.h \
@@ -53,4 +59,10 @@ HEADERS += \
     States/istate.h \
     Graphics/animation.h \
     Graphics/animatedgraphics.h \
-    States/statemachine.h
+    States/statemachine.h \
+    States/Movement/vmoveidle.h \
+    States/Movement/vmoveup.h \
+    States/Movement/vmoverdown.h \
+    States/Movement/hmoveidle.h \
+    States/Movement/hmoveleft.h \
+    States/Movement/hmoveright.h
