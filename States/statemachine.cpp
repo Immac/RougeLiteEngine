@@ -23,4 +23,16 @@ void StateMachine::update(GameObject &object)
     int exit = temporalState->state->update(object);
     activeState = temporalState->Exits.value(exit);
 }
+EInput StateMachine::getActiveState() const
+{
+    return activeState;
+}
+
+void StateMachine::setActiveState(const EInput &value)
+{
+    activeState = value;
+}
+
+
+
 

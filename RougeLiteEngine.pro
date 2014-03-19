@@ -32,8 +32,6 @@ SOURCES += main.cpp \
     composition.cpp \
     GameObject/gameobject.cpp \
     Inputs/keyboardinput.cpp \
-    Graphics/simplecharacter.cpp \
-    Graphics/compositecharacter.cpp \
     Graphics/animation.cpp \
     Graphics/animatedgraphics.cpp \
     States/statemachine.cpp \
@@ -42,7 +40,8 @@ SOURCES += main.cpp \
     States/Movement/vmoverdown.cpp \
     States/Movement/hmoveidle.cpp \
     States/Movement/hmoveleft.cpp \
-    States/Movement/hmoveright.cpp
+    States/Movement/hmoveright.cpp \
+    States/Movement/movestate.cpp
 
 HEADERS += \
     game.h \
@@ -53,8 +52,6 @@ HEADERS += \
     GameObject/gameobject.h \
     Isnputs/keyboardinput.h \
     Inputs/keyboardinput.h \
-    Graphics/compositecharacter.h \
-    Graphics/simplecharacter.h \
     Graphics/igraphic.h \
     States/istate.h \
     Graphics/animation.h \
@@ -65,4 +62,5 @@ HEADERS += \
     States/Movement/vmoverdown.h \
     States/Movement/hmoveidle.h \
     States/Movement/hmoveleft.h \
-    States/Movement/hmoveright.h
+    States/Movement/hmoveright.h \
+    States/Movement/movestate.h

@@ -31,6 +31,8 @@ protected:
     IGraphic *graphics;
     IInput *input;
     QList<StateMachine *> states;
+    //Flags
+
     //TODO: Object Interaction
 };
 

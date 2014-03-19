@@ -25,6 +25,10 @@ public:
     void addState(MachinableState &newState,EInput key);
     void handleInput(GameObject &object,IInput *input);
     void update(GameObject &object);
+
+    EInput getActiveState() const;
+    void setActiveState(const EInput &value);
+
 private:
     QHash<EInput,MachinableState *> machineStates;
     EInput activeState;

@@ -9,7 +9,6 @@
 #include "Inputs/iinput.h"
 #include "Inputs/keyboardinput.h"
 #include "Graphics/animation.h"
-#include "Graphics/simplecharacter.h"
 #include "States/statemachine.h"
 #include "States/Movement/vmoveidle.h"
 #include "States/Movement/vmoverdown.h"
@@ -18,7 +17,7 @@
 int main(int argc, char *argv[])
 {
 
-    QCoreApplication a(argc, argv);
+    //QCoreApplication a(argc, argv);
        sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
        sf::RenderTexture BufferRender;
        BufferRender.create(800,600);
@@ -124,5 +123,6 @@ int main(int argc, char *argv[])
            window.display();
        }
 
-    return a.exec();
+    //return a.exec();
+       return 0;
 }
