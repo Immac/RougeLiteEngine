@@ -6,6 +6,7 @@ HMoveIdle::HMoveIdle()
 
 int HMoveIdle::handleInput(GameObject &object, IInput *input)
 {
+
     if(input->isLeft())
     {
         return 1;
@@ -20,5 +21,6 @@ int HMoveIdle::handleInput(GameObject &object, IInput *input)
 
 int HMoveIdle::update(GameObject &object)
 {
+
     return 0;
 }

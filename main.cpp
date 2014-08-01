@@ -39,54 +39,54 @@ int main(int argc, char *argv[])
 
         //============ test keyboard input object
         KeyboardInput keyInput;
-        //============ test movement stats
-        StateMachine machine;
-        MachinableState myState;
-        myState.state = new VMoveIdle;
-        myState.Exits.insert(0,EInput::Idle);
-        myState.Exits.insert(1,EInput::MoveUp);
-        myState.Exits.insert(2,EInput::MoveDown);
+        //============ test movement states
+        StateMachine VerticalMovementMachine;
+        MachinableState idleVertical;
+        idleVertical.state = new VMoveIdle;
+        idleVertical.Exits.insert(0,Idle);
+        idleVertical.Exits.insert(1,MoveUp);
+        idleVertical.Exits.insert(2,MoveDown);
 
-        MachinableState myState2;
-        myState2.state = new VMoverDown;
-        myState2.Exits.insert(0,EInput::MoveDown);
-        myState2.Exits.insert(1,EInput::Idle);
+        MachinableState downVertical;
+        downVertical.state = new VMoveDown;
+        downVertical.Exits.insert(0,MoveDown);
+        downVertical.Exits.insert(1,Idle);
 
-        MachinableState myState3;
-        myState3.state = new VMoveUp;
-        myState3.Exits.insert(0,EInput::MoveUp);
-        myState3.Exits.insert(1,EInput::Idle);
+        MachinableState upVertical;
+        upVertical.state = new VMoveUp;
+        upVertical.Exits.insert(0,MoveUp);
+        upVertical.Exits.insert(1,Idle);
 
-        machine.addState(myState,Idle);
-        machine.addState(myState2,MoveDown);
-        machine.addState(myState3,MoveUp);
+        VerticalMovementMachine.addState(idleVertical,Idle);
+        VerticalMovementMachine.addState(downVertical,MoveDown);
+        VerticalMovementMachine.addState(upVertical,MoveUp);
 
-        StateMachine machine2;
-        MachinableState yourState;
-        yourState.state = new HMoveIdle;
-        yourState.Exits.insert(0,EInput::Idle);
-        yourState.Exits.insert(1,EInput::MoveLeft);
-        yourState.Exits.insert(2,EInput::MoveRight);
+        StateMachine HorizontalMovementMachine;
+        MachinableState idleHorizontal;
+        idleHorizontal.state = new HMoveIdle;
+        idleHorizontal.Exits.insert(0,Idle);
+        idleHorizontal.Exits.insert(1,MoveLeft);
+        idleHorizontal.Exits.insert(2,MoveRight);
 
-        MachinableState yourState2;
-        yourState2.state = new HMoveLeft;
-        yourState2.Exits.insert(0,EInput::MoveLeft);
-        yourState2.Exits.insert(1,EInput::Idle);
+        MachinableState leftHorizontal;
+        leftHorizontal.state = new HMoveLeft;
+        leftHorizontal.Exits.insert(0,MoveLeft);
+        leftHorizontal.Exits.insert(1,Idle);
 
-        MachinableState yourState3;
-        yourState3.state = new HMoveRight;
-        yourState3.Exits.insert(0,EInput::MoveRight);
-        yourState3.Exits.insert(1,EInput::Idle);
+        MachinableState rightHorizontal;
+        rightHorizontal.state = new HMoveRight;
+        rightHorizontal.Exits.insert(0,MoveRight);
+        rightHorizontal.Exits.insert(1,Idle);
 
-        machine2.addState(yourState,Idle);
-        machine2.addState(yourState2,MoveLeft);
-        machine2.addState(yourState3,MoveRight);
+        HorizontalMovementMachine.addState(idleHorizontal,Idle);
+        HorizontalMovementMachine.addState(leftHorizontal,MoveLeft);
+        HorizontalMovementMachine.addState(rightHorizontal,MoveRight);
 
 
         //============ test gameobject
         GameObject *gameObject1 = new GameObject(&keyInput,simpleGraphics);
-        gameObject1->addStateMachine(&machine);
-        gameObject1->addStateMachine(&machine2);
+        gameObject1->addStateMachine(&VerticalMovementMachine);
+        gameObject1->addStateMachine(&HorizontalMovementMachine);
         //============
 
        while (window.isOpen())

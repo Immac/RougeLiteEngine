@@ -1,10 +1,10 @@
 #include "vmoverdown.h"
 
-VMoverDown::VMoverDown()
+VMoveDown::VMoveDown()
 {
 }
 
-int VMoverDown::handleInput(GameObject &object, IInput *input)
+int VMoveDown::handleInput(GameObject &object, IInput *input)
 {
     if(!input->isDown())
     {
@@ -13,7 +13,7 @@ int VMoverDown::handleInput(GameObject &object, IInput *input)
     return 0;
 }
 
-int VMoverDown::update(GameObject &object)
+int VMoveDown::update(GameObject &object)
 {
     object.animate();
     object.move(0,1);

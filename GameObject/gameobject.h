@@ -23,14 +23,13 @@ public:
     virtual void update();
     virtual void animate();
     virtual void render();
-
     virtual void addStateMachine(StateMachine *state);
 
 
 protected:
     IGraphic *graphics;
     IInput *input;
-    QList<StateMachine *> states;
+    QList<StateMachine *> stateMachines;
     //Flags
 
     //TODO: Object Interaction

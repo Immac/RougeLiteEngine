@@ -6,6 +6,7 @@ VMoveIdle::VMoveIdle()
 
 int VMoveIdle::handleInput(GameObject &object, IInput *input)
 {
+
     if(input->isUp())
     {
         return 1;
@@ -20,6 +21,5 @@ int VMoveIdle::handleInput(GameObject &object, IInput *input)
 
 int VMoveIdle::update(GameObject &object)
 {
-
     return 0;
 }

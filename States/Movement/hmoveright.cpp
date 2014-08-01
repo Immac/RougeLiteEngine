@@ -15,7 +15,7 @@ int HMoveRight::handleInput(GameObject &object, IInput *input)
 
 int HMoveRight::update(GameObject &object)
 {
-    object.animate();
-    object.move(1,0);
+    object.animate(); //TODO
+    object.move(1,0); //TODO
     return 0;
 }

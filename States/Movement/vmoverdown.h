@@ -2,10 +2,10 @@
 #define VMOVERDOWN_H
 #include "States/istate.h"
 
-class VMoverDown:public IState
+class VMoveDown:public IState
 {
 public:
-    VMoverDown();
+    VMoveDown();
 
     // IState interface
 public:
